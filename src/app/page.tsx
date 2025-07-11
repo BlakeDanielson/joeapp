@@ -94,7 +94,7 @@ export default function DatadogPresentation() {
               </span>
             </div>
             <div className="hidden md:flex items-center space-x-1">
-              {sections.map((section, index) => (
+              {sections.map((section) => (
                 <Button
                   key={section.id}
                   variant="ghost"
