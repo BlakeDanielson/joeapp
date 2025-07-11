@@ -77,12 +77,13 @@ export default function DatadogPresentation() {
         <div className="container mx-auto px-4 py-3">
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <Monitor className="w-5 h-5 text-primary-foreground" />
-              </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                Datadog
-              </span>
+              <Image
+                src="/Datadog_logo.svg.png"
+                alt="Datadog Logo"
+                width={120}
+                height={40}
+                className="h-8 w-auto"
+              />
             </div>
             <div className="hidden md:flex items-center space-x-1">
               {sections.map((section) => (
@@ -98,15 +99,7 @@ export default function DatadogPresentation() {
                 </Button>
               ))}
             </div>
-            <div className="flex items-center">
-              <Image
-                src="/Datadog_logo.svg.png"
-                alt="Datadog Logo"
-                width={120}
-                height={40}
-                className="h-8 w-auto"
-              />
-            </div>
+
           </div>
         </div>
       </nav>
