@@ -7,7 +7,6 @@ import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Progress } from '@/components/ui/progress';
-import { Separator } from '@/components/ui/separator';
 import { 
   Monitor, 
   Zap, 
@@ -21,7 +20,6 @@ import {
   Target,
   ChevronRight,
   CheckCircle,
-  AlertTriangle,
   BarChart3,
   Activity,
   Users,
@@ -42,7 +40,6 @@ import {
 } from 'lucide-react';
 
 export default function DatadogPresentation() {
-  const [currentSection, setCurrentSection] = useState(0);
   const [animatedNumbers, setAnimatedNumbers] = useState({
     latencyReduction: 0,
     mttrReduction: 0,
@@ -100,7 +97,7 @@ export default function DatadogPresentation() {
               {sections.map((section, index) => (
                 <Button
                   key={section.id}
-                  variant={currentSection === index ? "default" : "ghost"}
+                  variant="ghost"
                   size="sm"
                   onClick={() => scrollToSection(section.id)}
                   className="flex items-center space-x-2"
@@ -119,10 +116,10 @@ export default function DatadogPresentation() {
         <div className="container mx-auto text-center">
           <div className="max-w-4xl mx-auto">
             <Badge className="mb-6 bg-primary/10 text-primary border-primary/20">
-              For Roll20's Development & Operations Teams
+              For Roll20&apos;s Development & Operations Teams
             </Badge>
             <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
-              Elevate Roll20's Gaming Experience
+              Elevate Roll20&apos;s Gaming Experience
             </h1>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
               Unified observability platform designed for real-time gaming platforms. 
@@ -429,7 +426,7 @@ export default function DatadogPresentation() {
                   <div>
                     <h4 className="font-semibold mb-2">The Challenge</h4>
                     <p className="text-sm text-muted-foreground">
-                      Roll20's platform is heavily reliant on JavaScript for the virtual tabletop experience. 
+                      Roll20&apos;s platform is heavily reliant on JavaScript for the virtual tabletop experience. 
                       Errors can break immersion and frustrate players.
                     </p>
                   </div>
@@ -826,7 +823,7 @@ export default function DatadogPresentation() {
           <Card className="bg-gradient-to-r from-primary/10 to-secondary/10 border-primary/20">
             <CardContent className="p-8">
               <div className="text-center">
-                <h3 className="text-2xl font-bold mb-4">Ready to Transform Roll20's Observability?</h3>
+                <h3 className="text-2xl font-bold mb-4">Ready to Transform Roll20&apos;s Observability?</h3>
                 <p className="text-lg text-muted-foreground mb-6">
                   Join thousands of gaming and web platforms that rely on Datadog for mission-critical observability
                 </p>
@@ -1069,7 +1066,7 @@ export default function DatadogPresentation() {
         <div className="container mx-auto text-center">
           <h2 className="text-4xl font-bold mb-4">Next Steps</h2>
           <p className="text-xl text-muted-foreground mb-8">
-            Let's discuss how Datadog can specifically address Roll20's observability needs
+            Let&apos;s discuss how Datadog can specifically address Roll20&apos;s observability needs
           </p>
 
           <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
@@ -1110,7 +1107,7 @@ export default function DatadogPresentation() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  See Datadog in action with a demo tailored to Roll20's specific use cases and challenges
+                  See Datadog in action with a demo tailored to Roll20&apos;s specific use cases and challenges
                 </p>
               </CardContent>
             </Card>
