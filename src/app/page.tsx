@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -16,11 +17,8 @@ import {
   Globe, 
   Server, 
   Brain, 
-  Timer, 
   Target,
-  ChevronRight,
   CheckCircle,
-  BarChart3,
   Activity,
   Users,
   GamepadIcon,
@@ -32,10 +30,6 @@ import {
   Rocket,
   DollarSign,
   LineChart,
-  BookOpen,
-  ExternalLink,
-  FileText,
-  Play,
   Building
 } from 'lucide-react';
 
@@ -66,9 +60,7 @@ export default function DatadogPresentation() {
     { id: 'why-gaming', title: 'Why Gaming Industry', icon: <GamepadIcon className="w-4 h-4" /> },
     { id: 'roll20-benefits', title: 'Roll20 Benefits', icon: <TrendingUp className="w-4 h-4" /> },
     { id: 'why-development', title: 'For Development', icon: <Cpu className="w-4 h-4" /> },
-    { id: 'business-impact', title: 'Business Impact', icon: <Target className="w-4 h-4" /> },
-    { id: 'case-studies', title: 'Results & Metrics', icon: <BarChart3 className="w-4 h-4" /> },
-    { id: 'next-steps', title: 'Next Steps', icon: <ChevronRight className="w-4 h-4" /> }
+    { id: 'business-impact', title: 'Business Impact', icon: <Target className="w-4 h-4" /> }
   ];
 
   const scrollToSection = (sectionId: string) => {
@@ -105,6 +97,15 @@ export default function DatadogPresentation() {
                   <span className="text-sm">{section.title}</span>
                 </Button>
               ))}
+            </div>
+            <div className="flex items-center">
+              <Image
+                src="/Datadog_logo.svg.png"
+                alt="Datadog Logo"
+                width={120}
+                height={40}
+                className="h-8 w-auto"
+              />
             </div>
           </div>
         </div>
@@ -720,206 +721,8 @@ export default function DatadogPresentation() {
             </Card>
           </div>
 
-          <Card className="bg-gradient-to-r from-green-50 to-blue-50 border-green-200">
-            <CardContent className="p-8">
-              <div className="text-center">
-                <h3 className="text-2xl font-bold mb-4">ROI Calculator</h3>
-                <div className="grid md:grid-cols-4 gap-6">
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-green-600 mb-2">$2.3M</div>
-                    <div className="text-sm text-muted-foreground">Annual revenue protected</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-blue-600 mb-2">345%</div>
-                    <div className="text-sm text-muted-foreground">Average ROI in year 1</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-purple-600 mb-2">6 months</div>
-                    <div className="text-sm text-muted-foreground">Time to break-even</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-orange-600 mb-2">15%</div>
-                    <div className="text-sm text-muted-foreground">Improvement in team velocity</div>
-                  </div>
-                </div>
-                <p className="text-sm text-muted-foreground mt-4">
-                  *Based on average metrics from similar gaming platforms using Datadog
-                </p>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </section>
-
-      {/* Case Studies & Metrics */}
-      <section id="case-studies" className="py-16 px-4">
-        <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">Proven Results</h2>
-            <p className="text-xl text-muted-foreground">
-              Real metrics from gaming and web platforms using Datadog
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            <Card className="text-center">
-              <CardHeader>
-                <div className="text-3xl font-bold text-primary mb-2">
-                  {animatedNumbers.latencyReduction}%
-                </div>
-                <CardTitle className="text-lg">Latency Reduction</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  Companies using Datadog APM report up to 70% reduction in application latency
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center">
-              <CardHeader>
-                <div className="text-3xl font-bold text-secondary mb-2">
-                  {animatedNumbers.mttrReduction}%
-                </div>
-                <CardTitle className="text-lg">MTTR Reduction</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  Mean Time to Resolution reduced by up to 80% with unified observability
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center">
-              <CardHeader>
-                <div className="text-3xl font-bold text-primary mb-2">
-                  {animatedNumbers.costSavings}%
-                </div>
-                <CardTitle className="text-lg">Cost Savings</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  Gaming companies reported 20% reduction in AWS costs through optimization
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center">
-              <CardHeader>
-                <div className="text-3xl font-bold text-secondary mb-2">
-                  {animatedNumbers.performanceGain}%
-                </div>
-                <CardTitle className="text-lg">Performance Gain</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  User-facing performance improved by 35% with RUM implementation
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-
-          <Card className="bg-gradient-to-r from-primary/10 to-secondary/10 border-primary/20">
-            <CardContent className="p-8">
-              <div className="text-center">
-                <h3 className="text-2xl font-bold mb-4">Ready to Transform Roll20&apos;s Observability?</h3>
-                <p className="text-lg text-muted-foreground mb-6">
-                  Join thousands of gaming and web platforms that rely on Datadog for mission-critical observability
-                </p>
-                <div className="flex justify-center space-x-2">
-                  <Badge variant="outline" className="text-sm">700+ Integrations</Badge>
-                  <Badge variant="outline" className="text-sm">Real-time Monitoring</Badge>
-                  <Badge variant="outline" className="text-sm">AI-Powered Insights</Badge>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-
-
-      {/* Next Steps */}
-      <section id="next-steps" className="py-16 px-4">
-        <div className="container mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-4">Next Steps</h2>
-          <p className="text-xl text-muted-foreground mb-8">
-            Let&apos;s discuss how Datadog can specifically address Roll20&apos;s observability needs
-          </p>
-
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <Card>
-              <CardHeader>
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <Timer className="w-6 h-6 text-primary" />
-                </div>
-                <CardTitle>Free Trial</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  Start with a 14-day free trial to see immediate value in your Roll20 infrastructure
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <Users className="w-6 h-6 text-secondary" />
-                </div>
-                <CardTitle>Technical Deep Dive</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  Schedule a technical session with our solutions engineers familiar with gaming platforms
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <Target className="w-6 h-6 text-primary" />
-                </div>
-                <CardTitle>Custom Demo</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  See Datadog in action with a demo tailored to Roll20&apos;s specific use cases and challenges
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="mt-12">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 mr-4">
-              <ChevronRight className="w-5 h-5 mr-2" />
-              Start Free Trial
-            </Button>
-            <Button size="lg" variant="outline">
-              <Users className="w-5 h-5 mr-2" />
-              Schedule Demo
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="py-8 px-4 border-t">
-        <div className="container mx-auto text-center">
-          <div className="flex items-center justify-center space-x-2 mb-4">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <Monitor className="w-5 h-5 text-primary-foreground" />
-            </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Datadog
-            </span>
-          </div>
-          <p className="text-sm text-muted-foreground">
-            Empowering Roll20 with unified observability for exceptional gaming experiences
-          </p>
-        </div>
-      </footer>
     </div>
   );
 }
